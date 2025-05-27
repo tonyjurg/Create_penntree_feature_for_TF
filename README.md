@@ -8,7 +8,7 @@ This repository contains the Jupyter Notebook used to create three new Text-Fabr
 
 The final feature files will be added to the package available at the [tonyjurg/N1904addons](https://tonyjurg.github.io/N1904addons/) repository.
 
-## Example 
+## Examples
 
 The following example shows the penn tree generated whenn passing the feature data to [nltk](https://www.nltk.org/): 
 
