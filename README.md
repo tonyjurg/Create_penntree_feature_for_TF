@@ -1,11 +1,44 @@
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-
 # Create penntree feature for Text-Fabric
 
-[Jupyter notebook](create_penn_tree.ipynb) to creating the [penntree feature](https://tonyjurg.github.io/N1904addons/features/penntree.html) for N1904-TF.
+This repository contains the Jupyter Notebook used to create three new Text-Fabric feature:
 
-The build feature is part of the [N1904addons](https://tonyjurg.github.io/N1904addons/).
+   - [pentree](https://tonyjurg.github.io/N1904addons/features/pentree.html): Penn tree like syntax tree.
+
+The final feature files will be added to the package available at the [tonyjurg/N1904addons](https://tonyjurg.github.io/N1904addons/) repository.
+
+## Example 
+
+The following example shows the penn tree generated whenn passing the feature data to [nltk](https://www.nltk.org/): 
+
+```text
+from nltk import Tree
+ptbString=F.penntree.v(sentenceNode)
+tree = Tree.fromstring(ptbString)
+tree.pretty_print()  # console-style print   
+                                               S                                 
+                                               |                                  
+                                               WG                                
+            ___________________________________|_________________                 
+           CL                                                    |               
+    _______|________________                                     |                
+   |                      NP-SBJ                                 |               
+   |        ________________|_____________                       |                
+   |       |       |                      CL                     |               
+   |       |       |         _____________|____                  |                
+  VP-V     |       |       VP-V              PP-ADV              CL              
+   |       |       |        |         _________|______       ____|____________    
+  VERB    NOUN   PUNCT     VERB     PREP      NOUN  PUNCT  NOUN PRON  NOUN  PUNCT
+   |       |       |        |        |         |      |     |    |     |      |   
+ἐγένετο ἄνθρωπος   ,   ἀπεσταλμένος παρὰ      θεοῦ    ,   ὄνομα αὐτῷ ἰωάνης   ·  
+```
+
+## Production notebook
+
+You can view the production notebook on [nbviewer.org](https://nbviewer.org/github/tonyjurg/Create_penntree_feature_for_TF/blob/main/create_penn_tree.ipynb).
+
+Alternative, you can also download it from the [GitHub repository](https://github.com/tonyjurg/Create_penntree_feature_for_TF/blob/main/create_penn_tree.ipynb).
 
 ## Attribution and footnotes
 
