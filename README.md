@@ -2,7 +2,7 @@
 
 # Create penntree feature for Text-Fabric
 
-This repository contains the Jupyter Notebook used to create three new Text-Fabric feature:
+This repository contains the Jupyter Notebook used to create this new Text-Fabric feature:
 
    - [pentree](https://tonyjurg.github.io/N1904addons/features/pentree.html): Penn tree like syntax tree.
 
