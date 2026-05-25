@@ -1,0 +1,154 @@
+{
+  "repo_notes": [
+    {
+      "content": ""
+    }
+  ],
+  "pages": [
+    {
+      "title": "Project Overview",
+      "purpose": "High-level introduction to the Create_penntree_feature_for_TF project: its goals, the datasets it bridges, and how the pieces fit together. Links to child pages for setup and background context.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Getting Started",
+      "purpose": "Step-by-step guide for setting up the environment, installing dependencies (Text-Fabric, NLTK, MACULA XML source), loading the N1904 corpus, and running the notebooks for the first time.",
+      "parent": "Project Overview",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Background: Penn Treebank and Text-Fabric",
+      "purpose": "Explains the two foundational frameworks the project depends on — the Penn Treebank (PTB) labeled-bracketing convention and the Text-Fabric (TF) graph-based corpus model — and why they are combined here.",
+      "parent": "Project Overview",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Core Architecture: The Feature Generation Pipeline",
+      "purpose": "Overview of the end-to-end data pipeline that transforms MACULA XML source data into the penntree TF feature. Introduces the three stages (extraction, tree construction, serialization) and links to child pages for each.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "XML Parsing and the TagTracker State Machine",
+      "purpose": "Deep dive into how the MACULA Greek New Testament XML is parsed. Covers the TagTracker class, its stack-based depth-first traversal, the start_element and end_element callbacks, and how sentence, wg, and w tags are handled.",
+      "parent": "Core Architecture: The Feature Generation Pipeline",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "MACULA-to-PTB Schema Mapping",
+      "purpose": "Documents the translation layer between MACULA Greek syntactic roles/classes and standard Penn Treebank phrase labels and function tags. Covers phraseRole(), class-to-label mapping tables, POS uppercasing, and known edge cases such as post-positive conjunctions.",
+      "parent": "Core Architecture: The Feature Generation Pipeline",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Tree Serialization and Punctuation Injection",
+      "purpose": "Explains how the nested parenthesis string is assembled during traversal, how punctuation embedded in the 'after' XML attribute is extracted and injected as explicit PUNCT nodes, and how unicode normalization (NFC) is applied to Greek text.",
+      "parent": "Core Architecture: The Feature Generation Pipeline",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Consistency Checking and Validation",
+      "purpose": "Describes the two-layer validation system: the custom annotate_parentheses / check_consistency parenthesis-balance checker, and the final NLTK Tree.fromstring() round-trip validation run against all 8,011 generated sentence trees.",
+      "parent": "Core Architecture: The Feature Generation Pipeline",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Output: The penntree Text-Fabric Feature",
+      "purpose": "Overview of the penntree feature as a TF artifact — its file format, metadata header, node-ID alignment, and how it integrates with the N1904addons distribution. Links to child pages covering the file format and the examples notebook.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "penntree.tf File Format and Metadata",
+      "purpose": "Detailed reference for the tf/1.0.0/penntree.tf file: the TF binary header fields (valueType, version, writtenBy, description, license), the node-ID-to-string data layout, the sentence node offset (258525), and how the file is written via TF.save().",
+      "parent": "Output: The penntree Text-Fabric Feature",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Using the penntree Feature: Examples Notebook",
+      "purpose": "Walkthrough of examples.ipynb — how to load N1904-TF together with the N1904addons dataset, retrieve a penntree string with F.penntree.v(sentenceNode), and visualize the result with nltk.Tree.fromstring() and tree.pretty_print().",
+      "parent": "Output: The penntree Text-Fabric Feature",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Repository Assets and Licensing",
+      "purpose": "Covers the non-code assets in the repository: the CC BY 4.0 license, the images directory (license badge), and the .gitignore configuration. Links to child pages for license details and asset management.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "License and Attribution",
+      "purpose": "Full details of the CC BY 4.0 license governing the notebook and output feature files, required attribution text and URL (https://github.com/tonyjurg/N1904addons), upstream dataset licenses (N1904-TF MIT, Nestle 1904 public domain), and citation guidance.",
+      "parent": "Repository Assets and Licensing",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Repository Structure and Development Environment",
+      "purpose": "Describes the repository layout (notebooks, tf/ output directory, images/ assets), the .gitignore rules that exclude Jupyter checkpoint directories, and guidance for contributors on keeping the repo clean.",
+      "parent": "Repository Assets and Licensing",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Glossary",
+      "purpose": "Definitions of all codebase-specific terms, abbreviations, and domain concepts that an onboarding engineer needs to understand. Each entry includes code pointers to the relevant file or function.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    }
+  ]
+}
